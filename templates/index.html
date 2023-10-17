@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Property Price Prediction</title>
+</head>
+<body>
+    <h1>Property Price Predictor</h1>
+    <form action="/predict" method="POST">
+        <label for="Baths">Baths:</label>
+        <input type="text" id="Baths" name="Baths" value="{{Baths}}" required><br><br>
+        <label for="Beds">Beds:</label>
+        <input type="text" id="Beds" name="Beds" required><br><br>
+        <label for="District_Colombo">District Colombo (1 if yes, 0 if no):</label>
+        <input type="text" id="District_Colombo" name="District_Colombo" required><br><br>
+        <label for="District_Gampaha">District Gampaha (1 if yes, 0 if no):</label>
+        <input type="text" id="District_Gampaha" name="District_Gampaha" required><br><br>
+        <label for="House_size">House Size (sqft):</label>
+        <input type="text" id="House_size" name="House_size" required><br><br>
+        <label for="Land_size">Land Size (perches):</label>
+        <input type="text" id="Land_size" name="Land_size" required><br><br>
+        <label for="Lat">Latitude:</label>
+        <input type="text" id="Lat" name="Lat" required><br><br>
+        <label for="Lon">Longitude:</label>
+        <input type="text" id="Lon" name="Lon" required><br><br>
+        <label for="has_cctv">Has CCTV (1 if yes, 0 if no):</label>
+        <input type="text" id="has_cctv" name="has_cctv" required><br><br>
+        <label for="has_garage">Has Garage (1 if yes, 0 if no):</label>
+        <input type="text" id="has_garage" name="has_garage" required><br><br>
+        <label for="has_garden">Has Garden (1 if yes, 0 if no):</label>
+        <input type="text" id="has_garden" name="has_garden" required><br><br>
+        <label for="has_pool">Has Pool (1 if yes, 0 if no):</label>
+        <input type="text" id="has_pool" name="has_pool" required><br><br>
+        <label for="story">story</label>
+        <input type="text" id="story" name="story" required><br><br>
+        <input type="submit" value="Predict">
+    </form>
+    {% if prediction_text %}
+    <h2>{{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
